@@ -31,17 +31,17 @@ export default function RegisterPage({ onSuccess, onSwitchToLogin, onExit }) {
 
   if (step === "role") {
     return (
-      <div className="min-h-screen bg-beige-50 flex items-center justify-center px-6 py-16">
+      <div className="min-h-screen bg-beige-50 flex items-center justify-center px-6 py-20">
         <div className="w-full max-w-sm">
-        <div className="text-center mb-16">
-          <button onClick={onExit} className="flex items-center gap-3 justify-center mx-auto mb-10">
-            <img src="/logo.png" alt="RescuePaw" className="h-12 w-auto" />
-          </button>
-          <h1 className="text-4xl font-bold text-taupe-900 mb-3">S'inscrire</h1>
-          <p className="text-taupe-600 text-base">Choisissez votre profil</p>
-        </div>
+          <div className="text-center mb-16">
+            <button onClick={onExit} className="flex items-center gap-3 justify-center mx-auto mb-12">
+              <img src="/logo.png" alt="RescuePaw" className="h-14 w-auto" />
+            </button>
+            <h1 className="text-4xl font-extrabold text-taupe-900 mb-3">S'inscrire</h1>
+            <p className="text-taupe-600 text-base">Choisissez votre profil</p>
+          </div>
 
-        <div className="space-y-4 mb-16">
+          <div className="space-y-4 mb-16">
             {roles.map((r) => {
               const Icon = r.icon;
               return (
@@ -63,7 +63,7 @@ export default function RegisterPage({ onSuccess, onSwitchToLogin, onExit }) {
           </div>
 
           <p className="text-center text-sm text-taupe-600">
-            Déjà un compte ? <button onClick={onSwitchToLogin} className="text-canard-600 font-semibold hover:text-canard-700 cursor-pointer">Se connecter</button>
+            Déjà un compte ? <button onClick={onSwitchToLogin} className="text-canard-600 font-semibold hover:text-canard-800 cursor-pointer">Se connecter</button>
           </p>
         </div>
       </div>
@@ -141,14 +141,14 @@ export default function RegisterPage({ onSuccess, onSwitchToLogin, onExit }) {
           <button 
             type="submit" 
             disabled={loading}
-            className="w-full bg-canard-600 hover:bg-canard-700 text-white py-3 rounded-xl font-semibold transition-all disabled:opacity-50"
+            className="w-full bg-canard-600 hover:bg-canard-800 text-white py-3 rounded-xl font-semibold transition-all duration-200 disabled:opacity-50"
           >
             {loading ? "Création…" : "Créer mon compte"}
           </button>
         </form>
 
-        <p className="text-center text-sm text-taupe-600 mt-8">
-          Déjà un compte ? <button onClick={onSwitchToLogin} className="text-canard-600 font-semibold hover:text-canard-700 cursor-pointer">Se connecter</button>
+        <p className="text-center text-sm text-taupe-600 mt-10">
+          Déjà un compte ? <button onClick={onSwitchToLogin} className="text-canard-600 font-semibold hover:text-canard-800 cursor-pointer">Se connecter</button>
         </p>
       </div>
     </div>

@@ -14,12 +14,12 @@ export default function QuizPage({ onComplete, onExit }) {
   const handlePrev = () => { if (step > 0) setStep(step - 1); };
 
   return (
-    <div className="min-h-screen bg-cream flex flex-col">
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border-light">
+    <div className="min-h-screen bg-beige-50 flex flex-col">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-beige-200/40">
         <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between">
-          <span className="text-sm font-bold text-anthracite">Quiz d'adoption</span>
-          <button onClick={onExit} className="w-8 h-8 rounded-lg hover:bg-stone-100 flex items-center justify-center transition-colors cursor-pointer">
-            <X size={18} strokeWidth={1.5} className="text-text-muted" />
+          <span className="text-sm font-bold text-taupe-900">Quiz d'adoption</span>
+          <button onClick={onExit} className="w-8 h-8 rounded-lg hover:bg-beige-100 flex items-center justify-center transition-colors cursor-pointer">
+            <X size={18} strokeWidth={1.5} className="text-taupe-400" />
           </button>
         </div>
       </div>

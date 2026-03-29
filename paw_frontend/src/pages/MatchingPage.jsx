@@ -28,21 +28,21 @@ export default function MatchingPage({ answers, onRestart, onExit, onLoginRequir
   }
 
   return (
-    <div className="min-h-screen bg-cream pt-20 pb-12">
+    <div className="min-h-screen bg-beige-50 pt-20 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <button onClick={onExit} className="flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors mb-4 cursor-pointer">
+          <button onClick={onExit} className="flex items-center gap-2 text-sm font-medium text-taupe-600 hover:text-taupe-900 transition-colors mb-4 cursor-pointer">
             <ArrowLeft size={18} strokeWidth={1.5} /> Retour à l'accueil
           </button>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <h1 className="text-3xl font-bold text-anthracite">Vos compagnons compatibles</h1>
-              <p className="text-text-secondary mt-1">{sortedAnimals.length} animaux correspondent à votre profil</p>
+              <h1 className="text-3xl font-bold text-taupe-900">Vos compagnons compatibles</h1>
+              <p className="text-taupe-600 mt-1">{sortedAnimals.length} animaux correspondent à votre profil</p>
             </div>
             <div className="flex items-center gap-2">
               {[{ value: "ALL", label: "Tous", icon: SlidersHorizontal }, { value: "DOG", label: "Chiens", icon: Dog }, { value: "CAT", label: "Chats", icon: Cat }].map(({ value, label, icon: Icon }) => (
                 <button key={value} onClick={() => setSpeciesFilter(value)}
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer ${speciesFilter === value ? "bg-forest-600 text-white shadow-sm" : "bg-white text-text-secondary border border-border hover:border-sage-300"}`}>
+                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer ${speciesFilter === value ? "bg-canard-600 text-white shadow-sm" : "bg-white text-taupe-600 border border-beige-200 hover:border-beige-300"}`}>
                   <Icon size={15} strokeWidth={1.5} />{label}
                 </button>
               ))}
@@ -56,7 +56,7 @@ export default function MatchingPage({ answers, onRestart, onExit, onLoginRequir
           </div>
         ) : (
           <div className="text-center py-20">
-            <p className="text-text-muted mb-4">Aucun animal ne correspond à ce filtre.</p>
+            <p className="text-taupe-400 mb-4">Aucun animal ne correspond à ce filtre.</p>
             <Button variant="outline" icon={RotateCcw} onClick={() => setSpeciesFilter("ALL")}>Réinitialiser les filtres</Button>
           </div>
         )}

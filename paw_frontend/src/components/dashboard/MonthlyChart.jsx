@@ -16,7 +16,7 @@ export default function MonthlyChart({ stats }) {
   const options = {
     responsive: true, maintainAspectRatio: false, interaction: { intersect: false, mode: "index" },
     plugins: { tooltip: { backgroundColor: "rgba(78,70,62,0.9)", titleFont: { family: "Plus Jakarta Sans", size: 12, weight: "600" }, bodyFont: { family: "Plus Jakarta Sans", size: 11 }, padding: 12, cornerRadius: 12, displayColors: true, boxPadding: 4 } },
-    scales: { x: { grid: { display: false }, border: { display: false }, ticks: { color: "#AO9B94", font: { family: "Plus Jakarta Sans", size: 11, weight: "500" } } }, y: { grid: { color: "rgba(0,0,0,0.03)" }, border: { display: false }, ticks: { color: "#A09B94", font: { family: "Plus Jakarta Sans", size: 11 } } } },
+    scales: { x: { grid: { display: false }, border: { display: false }, ticks: { color: "#A89A8B", font: { family: "Plus Jakarta Sans", size: 11, weight: "500" } } }, y: { grid: { color: "rgba(0,0,0,0.03)" }, border: { display: false }, ticks: { color: "#A89A8B", font: { family: "Plus Jakarta Sans", size: 11 } } } },
   };
   return (
     <Card padding="p-5">

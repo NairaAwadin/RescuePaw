@@ -69,16 +69,16 @@ export default function Navbar({ currentView, onNavigate }) {
           </div>
 
           {/* Mobile menu */}
-          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden p-2 rounded-xl hover:bg-stone-50 cursor-pointer">
+          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden p-2 rounded-xl hover:bg-beige-50 transition-colors cursor-pointer">
             {menuOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
           </button>
         </div>
 
         {menuOpen && (
-          <div className="md:hidden pb-4 pt-2 border-t border-border-light">
+          <div className="md:hidden pb-4 pt-2 border-t border-beige-200/40">
             <div className="flex flex-col gap-1">
               {links.map((link) => (
-                <button key={link.id} onClick={() => { onNavigate(link.id); setMenuOpen(false); }} className={`px-4 py-3 rounded-xl text-sm font-medium text-left transition-all cursor-pointer ${currentView === link.id ? "bg-forest-50 text-forest-700" : "text-text-secondary hover:bg-stone-50"}`}>
+                <button key={link.id} onClick={() => { onNavigate(link.id); setMenuOpen(false); }} className={`px-4 py-3 rounded-xl text-sm font-medium text-left transition-all cursor-pointer ${currentView === link.id ? "bg-canard-50 text-canard-800" : "text-taupe-600 hover:bg-beige-50"}`}>
                   {link.label}
                 </button>
               ))}

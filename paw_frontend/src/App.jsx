@@ -41,7 +41,7 @@ export default function App() {
   const isFullScreen = fullScreenViews.includes(currentView);
 
   return (
-    <div className="min-h-screen bg-cream flex flex-col">
+    <div className="min-h-screen bg-beige-50 flex flex-col">
       {!isFullScreen && <Navbar currentView={currentView} onNavigate={navigate} />}
 
       {currentView === "home" && (

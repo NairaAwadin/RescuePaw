@@ -4,7 +4,7 @@ import Card from "../ui/Card";
 import Badge from "../ui/Badge";
 import { MAP_TILE_URL, MAP_ATTRIBUTION, STATUS_CONFIG } from "../../utils/constants";
 
-const statusColors = { SIGNALED: "#A09B94", RESCUED: "#E8AA4C", ADOPTABLE: "#2B6B4F" };
+const statusColors = { SIGNALED: "#A89A8B", RESCUED: "#E8AA4C", ADOPTABLE: "#2B6B4F" };
 
 export default function SignalementsMap({ signalements }) {
   return (

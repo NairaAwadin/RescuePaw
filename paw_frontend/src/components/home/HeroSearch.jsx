@@ -11,48 +11,60 @@ export default function HeroSearch({ onSearch, onStartQuiz }) {
   };
 
   return (
-    <div className="bg-beige-50 min-h-screen flex items-center justify-center">
-      <div className="w-full max-w-4xl px-6 py-24">
-        <div className="text-center mb-20">
-          <h1 className="text-5xl sm:text-6xl font-bold text-taupe-900 mb-8 leading-tight">
-            Trouver le compagnon idéal
-          </h1>
-          <p className="text-lg text-taupe-600 mb-8 leading-relaxed max-w-2xl mx-auto">
-            Découvrez le bien-être animal de votre région et trouvez l'animal qui vous correspond.
-          </p>
-        </div>
-        <div className="space-y-6 max-w-lg mx-auto">
+    <div className="bg-beige-50 min-h-screen flex flex-col items-center justify-center px-6">
+      {/* Title & Subtitle */}
+      <div className="text-center mb-28 max-w-2xl">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-taupe-900 mb-6 leading-tight">
+          Trouver le compagnon idéal
+        </h1>
+        <p className="text-lg text-taupe-600 leading-relaxed">
+          Découvrez le bien-être animal de votre région et trouvez l'animal qui vous correspond.
+        </p>
+      </div>
+      
+      {/* Search & CTA Section */}
+      <div className="w-full max-w-md mx-auto space-y-8">
           {/* Search Bar */}
-          <form onSubmit={handleSubmit} className="relative">
-            <div className="relative">
-              <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                <Search size={20} strokeWidth={1.5} className="text-ambre-400" />
-              </div>
+          <form onSubmit={handleSubmit} className="w-full">
+            <div className="relative group">
               <input 
                 type="text" 
                 value={query} 
                 onChange={(e) => setQuery(e.target.value)} 
-                placeholder="Code postal ou ville…" 
-                className="w-full pl-12 pr-4 py-4 bg-white border border-beige-300 rounded-2xl text-taupe-800 placeholder:text-taupe-400 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-canard-500 focus:border-canard-500 transition-all"
+                placeholder="Ville ou code postal" 
+                className="w-full pl-6 pr-16 py-3.5 bg-white border border-beige-300 rounded-2xl text-taupe-900 placeholder:text-taupe-500 text-base focus:outline-none focus:ring-2 focus:ring-canard-500 focus:border-transparent transition-all"
               />
-              <button 
-                type="submit"
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-canard-600 hover:bg-canard-700 text-white px-6 py-2 rounded-xl font-medium text-sm transition-all"
-              >
-                Rechercher
-              </button>
+              <div className="absolute inset-y-0 right-5 flex items-center pointer-events-none">
+                <Search size={18} strokeWidth={1.5} className="text-canard-600 group-focus-within:text-canard-700 transition-colors" />
+              </div>
             </div>
           </form>
 
-          {/* CTA Button */}
+          {/* Search Submit Button */}
+          <button 
+            onClick={() => {
+              if (query.trim()) handleSubmit({ preventDefault: () => {} });
+            }}
+            className="w-full bg-canard-600 hover:bg-canard-700 text-white py-4 rounded-2xl font-semibold text-base transition-all duration-200"
+          >
+            Voir le score de bien-être
+          </button>
+
+          {/* OR Divider */}
+          <div className="flex items-center gap-4">
+            <div className="flex-1 h-px bg-beige-300"></div>
+            <span className="text-xs text-taupe-400 font-semibold">OU</span>
+            <div className="flex-1 h-px bg-beige-300"></div>
+          </div>
+
+          {/* Quiz CTA Button */}
           <button 
             onClick={onStartQuiz}
-            className="w-full bg-canard-600 hover:bg-canard-700 text-white py-4 rounded-2xl font-semibold text-base transition-all"
+            className="w-full bg-ambre-400 hover:bg-ambre-500 text-white py-4 rounded-2xl font-semibold text-base transition-all duration-200"
           >
             Lancer le quiz d'adoption
           </button>
         </div>
-      </div>
     </div>
   );
 }

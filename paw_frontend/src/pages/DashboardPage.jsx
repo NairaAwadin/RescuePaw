@@ -19,15 +19,15 @@ export default function DashboardPage({ onLogout, onNavigate }) {
   const handleLogout = () => { onLogout(); onNavigate("home"); };
 
   return (
-    <div className="flex h-screen bg-cream overflow-hidden">
+    <div className="flex h-screen bg-beige-50 overflow-hidden">
       <div className="hidden lg:block">
         <DashSidebar activeTab={activeTab} onTabChange={setActiveTab} onLogout={handleLogout} />
       </div>
       <main className="flex-1 overflow-y-auto">
         <div className="p-6 lg:p-8">
           <div className="mb-8">
-            <h1 className="text-2xl font-bold text-anthracite">Observatoire</h1>
-            <p className="text-sm text-text-muted mt-1">Vue d'ensemble du bien-être animal — lecture seule</p>
+            <h1 className="text-2xl font-bold text-taupe-900">Observatoire</h1>
+            <p className="text-sm text-taupe-400 mt-1">Vue d'ensemble du bien-être animal — lecture seule</p>
           </div>
 
           {/* KPIs */}

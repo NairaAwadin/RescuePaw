@@ -18,7 +18,7 @@ export default function ScoreGauge({ score = "C", size = 80 }) {
       </svg>
       <div className="absolute flex flex-col items-center">
         <span className={`text-xl font-bold ${config.text}`}>{score}</span>
-        <span className="text-[10px] font-medium text-text-muted">{config.label}</span>
+        <span className="text-[10px] font-medium text-taupe-400">{config.label}</span>
       </div>
     </div>
   );

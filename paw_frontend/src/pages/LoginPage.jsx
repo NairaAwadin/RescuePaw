@@ -22,17 +22,17 @@ export default function LoginPage({ onSuccess, onSwitchToRegister, onExit }) {
   };
 
   return (
-    <div className="min-h-screen bg-beige-50 flex items-center justify-center px-6 py-12">
+    <div className="min-h-screen bg-beige-50 flex items-center justify-center px-6 py-20">
       <div className="w-full max-w-sm">
-        <div className="text-center mb-12">
-          <button onClick={onExit} className="flex items-center gap-3 justify-center mx-auto mb-8">
-            <img src="/logo.png" alt="RescuePaw" className="h-10 w-auto" />
+        <div className="text-center mb-16">
+          <button onClick={onExit} className="flex items-center gap-3 justify-center mx-auto mb-12">
+            <img src="/logo.png" alt="RescuePaw" className="h-14 w-auto" />
           </button>
-          <h1 className="text-3xl font-bold text-taupe-900 mb-2">Connexion</h1>
-          <p className="text-taupe-600">Accédez à votre espace personnel</p>
+          <h1 className="text-4xl font-extrabold text-taupe-900 mb-3">Connexion</h1>
+          <p className="text-taupe-600 text-base">Accédez à votre espace personnel</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block text-sm font-semibold text-taupe-900 mb-2">Nom d'utilisateur</label>
             <input 
@@ -64,19 +64,19 @@ export default function LoginPage({ onSuccess, onSwitchToRegister, onExit }) {
             </div>
           </div>
 
-          {error && <p className="text-sm text-red-500 font-medium bg-red-50 rounded-lg p-3">{error}</p>}
+          {error && <p className="text-sm text-red-500 font-medium bg-red-50 rounded-lg p-4 mt-6">{error}</p>}
 
           <button 
             type="submit" 
             disabled={loading}
-            className="w-full bg-canard-600 hover:bg-canard-700 text-white py-3 rounded-xl font-semibold transition-all disabled:opacity-50"
+            className="w-full bg-canard-600 hover:bg-canard-800 text-white py-3 rounded-xl font-semibold transition-all duration-200 disabled:opacity-50"
           >
             {loading ? "Connexion…" : "Se connecter"}
           </button>
         </form>
 
-        <p className="text-center text-sm text-taupe-600 mt-8">
-          Pas encore de compte ? <button onClick={onSwitchToRegister} className="text-canard-600 font-semibold hover:text-canard-700 cursor-pointer">S'inscrire</button>
+        <p className="text-center text-sm text-taupe-600 mt-10">
+          Pas encore de compte ? <button onClick={onSwitchToRegister} className="text-canard-600 font-semibold hover:text-canard-800 cursor-pointer">S'inscrire</button>
         </p>
       </div>
     </div>
